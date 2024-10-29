@@ -153,3 +153,62 @@ A library management system built with Node.js, Express, and TypeORM. This syste
    404 Not Found: If the borrower with the specified ID does not exist.
    500 Internal Server Error: If an error occurs on the server.
 ```
+
+### Check Out a Book
+
+- **Endpoint:** `POST /checkout/:bookId/:borrowerId`
+- **Description:** Checks out a book for a borrower.
+- **Parameters:**
+  - `bookId` (string): The ID of the book to be checked out.
+  - `borrowerId` (string): The ID of the borrower.
+- **Responses:**
+  - **200 OK:** Successfully checked out the book.
+  - **404 Not Found:** If the book or borrower is not found.
+  - **400 Bad Request:** If the book is already checked out or out of stock.
+ 
+### Return a Book
+
+- **Endpoint:** `POST /return/:bookId/:borrowerId`
+- **Description:** Returns a checked-out book.
+- **Parameters:**
+  - `bookId` (string): The ID of the book to be returned.
+  - `borrowerId` (string): The ID of the borrower.
+- **Responses:**
+  - **200 OK:** Successfully returns the book.
+  - **404 Not Found:** If the book or borrower is not found.
+  - **400 Bad Request:** If the book was not checked out by this borrrower.
+
+### Get All Checked Out Books
+
+- **Endpoint:** `GET /checked-out`
+- **Description:** Retrieves a list of all currently checked-out books.
+- **Responses:**
+  - **200 OK:** Returns an array of checked-out books.
+  - **500 Interval Server Error:**: If an error occurs on the server.
+
+### Get Checked-Out Books by Borrower
+- **Endpoint:** `GET /checked-out/:borrowerId`
+- **Description:** Retrieves a list of books checked out by a specific borrower.
+- **Parameters:**
+  - `borrowerId` (string): The ID of the borrower.
+- **Responses:**
+  - **200 OK:** Returns an array of checked-out books for the specified borrower.
+  - **500 Interval Server Error:**: If an error occurs on the server.
+
+### Get Overdue Books
+- **Endpoint:** `GET /overdue`
+- **Description:** Retrieves a list of overdue books.
+- **Responses:**
+  - **200 OK:** Returns an array of overdue books.
+  - **500 Interval Server Error:**: If an error occurs on the server.
+
+### Export Borrowing Data in a specific period in csv or xlsx format
+- **Endpoint:** `GET /export`
+- **Description:** Exports all the borrowing data during a specified period in csv or xlsx format.
+- **Parameters:**
+  - `dateFrom` (date): start date from which to start retrieving borrowing data.
+  - `dateTo` (date): end date.
+  - `format` (string): csv or xlsx
+- **Responses:**
+  - **200 OK:** Returns a csv or xlsx file containing all the borrowing data of the system and it can be viewed if you save the response to a file in Postman.
+  - **500 Interval Server Error:**: If an error occurs on the server.
