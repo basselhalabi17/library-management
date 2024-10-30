@@ -1,7 +1,7 @@
 # Library Management System
 
 ## Description
-A library management system built with Node.js, Express, and TypeORM. This system allows users to manage books, authors, and other library resources.
+A library management system built with Node.js, Express, and TypeORM. This system allows users to manage books and borrowers.
 
 ## Installation
 
