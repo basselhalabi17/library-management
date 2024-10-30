@@ -222,3 +222,22 @@ A library management system built with Node.js, Express, and TypeORM. This syste
   - **500 Interval Server Error:**: If an error occurs on the server.
 
 ## Docker Setup
+
+1. Build And Run the docker-compose
+    ```sh
+    docker-compose up --build -d
+    ```
+2. You can view the logs using the following command:
+   ```sh
+   docker logs library-management -f
+   ```
+3. Application should also be running on ```localhost:7000 ```
+
+## Bonus Features Implemented
+
+1. The system can show analytical reports of the borrowing process in a specific period and
+export the borrowing process data in CSV or Xlsx sheet formats e.x.
+2. Exports all overdue borrows of the last month.
+3. Exports all borrowing processes of the last month.
+4. Implement rate limiting for the API to prevent abuse (applied on getAllBooks and searchBooks endpoints...it is set statically in the code with a maximum 2 requests per 3 seconds for testing purposes)
+5. Dockerizing the application using docker-compose.
