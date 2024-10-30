@@ -1,7 +1,7 @@
 # Library Management System
 
 ## Description
-A library management system built with Node.js, Express, and TypeORM. This system allows users to manage books and borrowers.
+A library management system built with Node.js, Express, and TypeORM. This system allows users to manage books and borrowers. Borrowing process takes place using the checkout endpoint where the borrow date is set to the current date and the due date is set to 3 minutes after the borrow date for testing purposes
 
 ## Installation
 
